@@ -19,7 +19,6 @@ for program in programs:
     result = requests.get("http://www.shouldiremoveit.com/programs.aspx?q=%s" % program)
     soup = BeautifulSoup(result.content)
     program_found = soup.find_all(name="span", class_="programbartxt_remove")
-    print program_found
 
     if program_found:
         if len(program_found) > 1:
